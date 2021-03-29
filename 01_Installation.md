@@ -15,7 +15,29 @@ Da express ein Framework für die Node.js Plattform ist, müsste man wenn es noc
    
         npm install express
 
-4. 
+4. Nun folgt noch ein kleines Code Beispiel, in diesem soeben angelegten Verzeichnis erstellen wir eine Datei names app.js 
+   
+         touch app.js
+
+5. Nun können wir in diese Date folgenden Code einfügen.
+
+         const express = require('express')
+         const app = express()
+         const port = 3000
+         
+         app.get('/', (req, res) => {
+         res.send('Hello World!')
+         })
+         
+         app.listen(port, () => {
+         console.log(`Example app listening at http://localhost:${port}`)
+         })
+
+6. Zum starten führen wir den Befehl
+
+         node app.js aus 
+
+
 
 ## Quellen
 
