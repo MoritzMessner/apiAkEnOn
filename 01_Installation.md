@@ -37,6 +37,9 @@ Da express ein Framework für die Node.js Plattform ist, müsste man wenn es noc
 
          node app.js aus 
 
+Jetzt sollten wir unsere erste kleine Website haben.
+![Hello World](images/installation.jpg)
+
 
 
 ## Quellen
