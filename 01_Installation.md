@@ -1,13 +1,13 @@
 # Installation und erste Schritte
 
-Da express ein Framework für die Node.js Plattform ist, müsste man wenn es noch nicht geschen ist [Node.js](https://nodejs.org/de/) installieren
+Da express ein Framework für die Node.js Plattform ist, müsste man, wenn es noch nicht geschehen ist [Node.js](https://nodejs.org/de/) installieren
 
-1. Nachdem Node.js installiert wurde legt man sich einen Projektordner an
+1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
         mkdir new_Project
         cd new_Project
 
-2. Danach muss man ein neues Node.js initieren
+2. Danach muss man ein neues Node.js Projekt initiieren
     
         npm init 
    
@@ -15,7 +15,7 @@ Da express ein Framework für die Node.js Plattform ist, müsste man wenn es noc
    
         npm install express
 
-4. Nun folgt noch ein kleines Code Beispiel, in diesem soeben angelegten Verzeichnis erstellen wir eine Datei names app.js 
+4. Nun folgt noch ein kleines Codebeispiel, in diesem soeben angelegten Verzeichnis erstellen wir eine Datei names app.js 
    
          touch app.js
 
@@ -33,9 +33,9 @@ Da express ein Framework für die Node.js Plattform ist, müsste man wenn es noc
          console.log(`Example app listening at http://localhost:${port}`)
          })
 
-6. Zum starten führen wir den Befehl
+6. Zum Starten führen wir den Befehl aus
 
-         node app.js aus 
+         node app.js  
 
 Jetzt sollten wir unsere erste kleine Website haben.
 ![Hello World](images/installation.jpg)

@@ -27,7 +27,7 @@ app.get('/home', (req, res) => {
 
 app.get('/date', function (req, res) {
     var responseText = 'Hello World!';
-    responseText += 'Requested at: ' + req.requestTime + '';
+    responseText += ' Requested at: ' + req.requestTime + '';
     res.send(responseText);
 });
 
