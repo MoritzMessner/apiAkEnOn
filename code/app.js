@@ -15,10 +15,12 @@ let requestTime = function (req, res, next) {
 };
 
 app.use(requestTime,myLogger);
+app.use(express.static('static'));
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    //res.send('Hello World!')
+    res.sendFile("html/index.html",{ root: "static" })
 })
 app.get('/home', (req, res) => {
     res.send('Hello Home!')
@@ -26,7 +28,7 @@ app.get('/home', (req, res) => {
 
 
 app.get('/date', function (req, res) {
-    var responseText = 'Hello World!';
+    let responseText = 'Hello World!';
     responseText += ' Requested at: ' + req.requestTime + '';
     res.send(responseText);
 });
