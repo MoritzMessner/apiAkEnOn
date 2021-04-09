@@ -25,10 +25,15 @@ Als nächstes legen wir uns eine simple Weiterleiten für den Pfad: "/" (root pa
 Wir könnten hier auf andere HTTP-Anforderungsmethoden verwenden, wie zum Beispiel *post*, *put* oder *delete*.
 Als letztes müssen wir noch eine oder mehrere Callback Funktionen, welche ausgeführt werden sollen angeben. Hier in unseren Beispiel verwenden wir eine Callback Funktion in das wir ein 'req'
 Objekt stecken, 'req' repräsentiert eine HTTP Anfrage und hat auch alle Eigenschaften einer (query string, parameters, body, header, ...).
+Neben dem Request Objekt geben wir nun auch noch ein Response Objekt an, diese Objekt repräsentiert eine HTTP response, welche von der Express Applikation dann gesendet wird, wenn ein Request eingeht.
+
+genereller Aufbaue ist wie folgt.
+ - ```javascript app.METHOD(PATH,  callback [, callback ...])```
+
 ```javascript
 app.get('/', (req, res) => {
      res.send('Hello World!')
-     })
+})
 ```
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
