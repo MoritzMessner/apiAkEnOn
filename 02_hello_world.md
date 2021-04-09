@@ -21,9 +21,10 @@ const port = 3000
 ```
 
 
-Als nächstes legen wir uns eine simple Weiterleiten für den Pfad: "/" an. Hier verwenden wir die "get" Methode um alle eingehenden GET-Requests auf diesen Pfad abzufangen.
+Als nächstes legen wir uns eine simple Weiterleiten für den Pfad: "/" (root path) an. Hier verwenden wir die "get" Methode um alle eingehenden GET-Requests auf diesen Pfad abzufangen.
 Wir könnten hier auf andere HTTP-Anforderungsmethoden verwenden, wie zum Beispiel *post*, *put* oder *delete*.
-Als letztes müssen wir noch eine oder mehrere Handlerfunktionen, welche ausgeführt werden sollen angeben.
+Als letztes müssen wir noch eine oder mehrere Callback Funktionen, welche ausgeführt werden sollen angeben. Hier in unseren Beispiel verwenden wir eine Callback Funktion in das wir ein 'req'
+Objekt stecken, 'req' repräsentiert eine HTTP Anfrage und hat auch alle Eigenschaften einer (query string, parameters, body, header, ...).
 ```javascript
 app.get('/', (req, res) => {
      res.send('Hello World!')
