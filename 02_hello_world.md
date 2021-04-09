@@ -26,15 +26,33 @@ Wir könnten hier auf andere HTTP-Anforderungsmethoden verwenden, wie zum Beispi
 Als letztes müssen wir noch eine oder mehrere Callback Funktionen, welche ausgeführt werden sollen angeben. Hier in unseren Beispiel verwenden wir eine Callback Funktion in das wir ein 'req'
 Objekt stecken, 'req' repräsentiert eine HTTP Anfrage und hat auch alle Eigenschaften einer (query string, parameters, body, header, ...).
 Neben dem Request Objekt geben wir nun auch noch ein Response Objekt an, diese Objekt repräsentiert eine HTTP response, welche von der Express Applikation dann gesendet wird, wenn ein Request eingeht.
-
-genereller Aufbaue ist wie folgt.
- - ```javascript app.METHOD(PATH,  callback [, callback ...])```
-
 ```javascript
 app.get('/', (req, res) => {
      res.send('Hello World!')
 })
 ```
+
+genereller Aufbaue ist wie folgt.
+```javascript
+app.METHOD(PATH,  callback [, callback ...])
+```
+
+Für jeden HTTP Request eine eigene Methode zu schreiben wäre aber lästig, deswegen können wir mit der folgenden Methode einfach alle eingehende Requests für eine Route Abfangen.
+genereller Aufbaue ist wie folgt.
+```javascript
+app.all('/', function (req, res)
+```
+
+Auch interessant zu wissen ist, dass der Parameter *PATH* einen der nachfolgenden Typen haben kann:
+ - ein String welcher den Pfad repräsentiert
+ - ein Pfad Muster
+ - ein regulärer Ausdruck
+ - eine Kombinationen aus den oben genannten
+
+Hier folgen einige Beispiele:
+String: '/abcd' wird dem Pfad '/abcd' zugeordnet
+Pfad Muster: '/ab*cd' wird den Pfaden, ['/abcd', '/abbcd', '/abbbbbcd'] zugeordnet.
+
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
         mkdir new_Project
