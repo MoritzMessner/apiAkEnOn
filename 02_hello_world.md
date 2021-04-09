@@ -50,8 +50,9 @@ Auch interessant zu wissen ist, dass der Parameter *PATH* einen der nachfolgende
  - eine Kombinationen aus den oben genannten
 
 Hier folgen einige Beispiele:
-String: '/abcd' wird dem Pfad '/abcd' zugeordnet
-Pfad Muster: '/ab*cd' wird den Pfaden, ['/abcd', '/abbcd', '/abbbbbcd'] zugeordnet.
+1) String: '/abcd' wird dem Pfad '/abcd' zugeordnet
+
+2) Pfad Muster: '/ab*cd' wird den Pfaden, ['/abcd', '/abbcd', '/abbbbbcd'] zugeordnet.
 
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
