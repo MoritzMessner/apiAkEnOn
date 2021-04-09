@@ -1,7 +1,7 @@
 # Hello World
 
 Im letzten Teil haben wir uns mit der Installation von Node und Express auseinandergesetzt. Nun werden wir versuchen das
-im letzten Teil angelegten skript genauer anschauen.
+im letzten Teil angelegten Skript genauer anzuschauen.
 
 ---
 Hier importieren wir die Funktionen von dem Modul Express
@@ -24,7 +24,7 @@ const port = 3000
 ```
 
 Als nächstes legen wir uns eine simple Weiterleiten für den Pfad: "/" (root path) an. Hier verwenden wir die "get"
-Methode um alle eingehenden GET-Requests auf diesen Pfad abzufangen. Wir könnten hier auf andere
+Methode um alle eingehenden GET-Requests auf diesen Pfad abzufangen. Wir könnten hier auch andere
 HTTP-Anforderungsmethoden verwenden, wie zum Beispiel *post*, *put* oder *delete*. Als letztes müssen wir noch eine oder
 mehrere Callback Funktionen, welche ausgeführt werden sollen angeben. Hier in unseren Beispiel verwenden wir eine
 Callback Funktion in das wir ein 'req' Objekt stecken, 'req' repräsentiert eine HTTP Anfrage und hat auch alle
@@ -41,12 +41,11 @@ app.get('/', (req, res) => {
 genereller Aufbaue ist wie folgt.
 
 ```javascript
-app.METHOD(PATH, callback [, callback
-...])
+app.METHOD(PATH, callback [, callback...]){...}
 ```
 
-Für jeden HTTP Request eine eigene Methode zu schreiben wäre aber lästig, deswegen können wir mit der folgenden Methode
-einfach alle eingehende Requests für eine Route abfangen. genereller Aufbau ist wie folgt.
+Für jede HTTP Methode eine eigene Methode zu schreiben wäre aber lästig, deswegen können wir mit der folgenden Methode
+einfach alle eingehende Requests für eine Route abfangen. Der generelle Aufbau ist wie folgt.
 
 ```javascript
 app.all('/', function (req, res)){...}
@@ -87,8 +86,8 @@ unserem Beispiel senden wir den Text 'Hello World!' als Response zurück.
 res.send('Hello World!')
 ```
 
-Mithilfe der Methode 'listen', welche auf die Instanz von express Angewendet wird, in unserem Fall die Variable 'app',
-können wir für den vorherigen definierten Port einen HTTP sever starten. Dieser Server wartet dann auf eigehende HTTP Anfragen-
+Mithilfe der Methode 'listen', welche auf die Instanz von express angewendet wird, in unserem Fall die Variable 'app',
+können wir für den vorherigen definierten Port einen HTTP sever starten. Dieser Server wartet dann auf eigehende HTTP Anfragen.
 Sollte keine Portnummer angegeben werden, wird das Betriebssystem sich selbst eine ungenutzte Portnummer heraussuchen.
 ```javascript
 app.listen(port, () => {
@@ -111,9 +110,6 @@ console.log(`Example app listening at http://localhost:${port}`)
 })
 ```
 
-## Quellen
 
-* [Installation Node.js](https://nodejs.org/de/)
-* [Installation Express.js](https://expressjs.com/de/starter/installing.html)
 
  
