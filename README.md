@@ -13,7 +13,7 @@
 ---
 ## Roadmap
 ### Forum
-*[ ] Login, Nutzer sollen sich registrieren/anmelden können
+- [ ] Login, Nutzer sollen sich registrieren/anmelden können
 *[ ] Übersicht über alle bestehenden Foreneinträge
 *[ ] Filterung von Beiträgen nach Kategorie
 ### Nutzer
