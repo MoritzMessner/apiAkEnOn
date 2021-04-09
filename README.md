@@ -14,8 +14,8 @@
 ## Roadmap
 ### Forum
 - [ ] Login, Nutzer sollen sich registrieren/anmelden können
--[ ] Übersicht über alle bestehenden Foreneinträge
--[ ] Filterung von Beiträgen nach Kategorie
+- [ ] Übersicht über alle bestehenden Foreneinträge
+- [ ] Filterung von Beiträgen nach Kategorie
 ### Nutzer
 - [ ] Einen Account anlegen
 - [ ] Beiträge selbst in dem Forum anlegen
