@@ -37,8 +37,8 @@ genereller Aufbaue ist wie folgt.
 app.METHOD(PATH,  callback [, callback ...])
 ```
 
-Für jeden HTTP Request eine eigene Methode zu schreiben wäre aber lästig, deswegen können wir mit der folgenden Methode einfach alle eingehende Requests für eine Route Abfangen.
-genereller Aufbaue ist wie folgt.
+Für jeden HTTP Request eine eigene Methode zu schreiben wäre aber lästig, deswegen können wir mit der folgenden Methode einfach alle eingehende Requests für eine Route abfangen.
+genereller Aufbau ist wie folgt.
 ```javascript
 app.all('/', function (req, res)
 ```
@@ -53,6 +53,23 @@ Hier folgen einige Beispiele:
 1) **String**: '/abcd' wird dem Pfad '/abcd' zugeordnet
 2) **Pfad Muster**: '/ab*cd' wird den Pfaden, ['/abcd', '/abbcd', '/abbbbbcd'] zugeordnet.
 3) **Regulärer Ausdruck**: '/\/abc|\/xyz/' wird den Pfaden, ['/abc', '/xyz'] zugeordnet.
+4) **Array**: '['/abcd', '/xyza', /\/lmn|\/pqr/]' wird den Pfaden, ['/abcd, '/xyza', '/lmn', '/pqr'] zugeordnet.
+
+Somit können wir einfach logik für viele Pfade Implementieren.
+Zum Beispiel können wir bestimme Pfade so mit einer Authentifikation schützen.
+```javascript
+app.all('/admin/*', requireAuthentication)
+```
+oder
+```javascript
+app.all(['/abcd', '/xyza'], requireAuthentication)
+```
+
+*Nun aber weiter zum Skript.*
+Innerhalb der Callback Methode können wir nun festlegen was als Response auf den Request gesendet werden soll.
+Hier in unserem Beispiel senden wir den Text 'Hello World!' als Response zurück.
+
+
 
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
