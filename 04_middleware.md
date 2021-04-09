@@ -89,7 +89,7 @@ app.use(function (req, res, next) {
     next()
 })
 ```
-alternativ eriechen wir das selbe auch so:
+alternativ ereichen wir dasselbe auch so:
 ```javascript
 var express = require('express')
 var app = express()
