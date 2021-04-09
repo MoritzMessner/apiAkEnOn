@@ -17,12 +17,12 @@
 -[ ] Übersicht über alle bestehenden Foreneinträge
 -[ ] Filterung von Beiträgen nach Kategorie
 ### Nutzer
--[ ] Einen Account anlegen
--[ ] Beiträge selbst in dem Forum anlegen
--[ ] Beiträge anderer Nutzer kommentieren
--[ ] Eigenen Beiträge bearbeiten
--[ ] Eigene Beiträge löschen
--[ ] Accountdaten bearbeiten (z.B. E-Mail ändern, Profilbild ändern)
+- [ ] Einen Account anlegen
+- [ ] Beiträge selbst in dem Forum anlegen
+- [ ] Beiträge anderer Nutzer kommentieren
+- [ ] Eigenen Beiträge bearbeiten
+- [ ] Eigene Beiträge löschen
+- [ ] Accountdaten bearbeiten (z.B. E-Mail ändern, Profilbild ändern)
 
 ---
 
