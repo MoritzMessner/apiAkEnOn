@@ -44,10 +44,10 @@ app.all('/', function (req, res)
 ```
 
 Auch interessant zu wissen ist, dass der Parameter *PATH* einen der nachfolgenden Typen haben kann:
- - ein String welcher den Pfad repräsentiert
- - ein Pfad Muster
- - ein regulärer Ausdruck
- - eine Kombinationen aus den oben genannten
+- ein String welcher den Pfad repräsentiert
+- ein Pfad Muster
+- ein regulärer Ausdruck
+- eine Kombinationen aus den oben genannten
 
 Hier folgen einige Beispiele:
 1) **String**: '/abcd' wird dem Pfad '/abcd' zugeordnet
@@ -69,23 +69,35 @@ app.all(['/abcd', '/xyza'], requireAuthentication)
 Innerhalb der Callback Methode können wir nun festlegen was als Response auf den Request gesendet werden soll.
 Hier in unserem Beispiel senden wir den Text 'Hello World!' als Response zurück.
 
+```javascript
+res.send('Hello World!')
+```
+
+Mithilfe der Methode 'listen', welche auf die Instanz von express Angewendet wird, in unserem Fall die Variable 'app', können wir für den vorherigen definierten Port einen HTTP sever starten. Dieser Server wartet dann
+
+
+```javascript
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
+```
 
 
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
-   
+
         mkdir new_Project
         cd new_Project
 
 2. Danach muss man ein neues Node.js Projekt initiieren
-    
+
         npm init 
-   
+
 3. Nun müsste man express.js mit dem Node Package Manager(NPM) installieren
-   
+
         npm install express
 
-4. Nun folgt noch ein kleines Codebeispiel, in diesem soeben angelegten Verzeichnis erstellen wir eine Datei names app.js 
-   
+4. Nun folgt noch ein kleines Codebeispiel, in diesem soeben angelegten Verzeichnis erstellen wir eine Datei names app.js
+
          touch app.js
 
 5. Nun können wir in diese Date folgenden Code einfügen.
