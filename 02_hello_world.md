@@ -1,6 +1,11 @@
-# Installation und erste Schritte
+# Hello World
 
-Da express ein Framework für die Node.js Plattform ist, müsste man, wenn es noch nicht geschehen ist [Node.js](https://nodejs.org/de/) installieren
+Im letzten Teil haben wir uns mit der Installation von Node und Express auseinandergesetzt. Nun werden wir versuchen das im letzten Teil angelegten skript genauer anschauen.
+
+---
+```javascript
+const express = require('express')
+```javascript
 
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
