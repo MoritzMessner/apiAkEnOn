@@ -5,7 +5,12 @@ Im letzten Teil haben wir uns mit der Installation von Node und Express auseinan
 ---
 ```javascript
 const express = require('express')
+```
+Hier importieren wir die Funktionen von dem Modul Express
+
 ```javascript
+   const app = express()
+```
 
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
