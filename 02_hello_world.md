@@ -3,15 +3,32 @@
 Im letzten Teil haben wir uns mit der Installation von Node und Express auseinandergesetzt. Nun werden wir versuchen das im letzten Teil angelegten skript genauer anschauen.
 
 ---
-```javascript
-const express = require('express')
-```
 Hier importieren wir die Funktionen von dem Modul Express
 
 ```javascript
-   const app = express()
+const express = require('express')
 ```
 
+Der folgende Befehl erzeugt uns eine express Application.
+Die Funktion ist eine Top-level Funktion welche aus dem Express modul exportiert wurde.
+```javascript
+const app = express()
+```
+
+Nun müssen wir für später noch eine Portnummer festlegen
+```javascript
+const port = 3000
+```
+
+
+Als nächstes legen wir uns eine simple Weiterleiten für den Pfad: "/" an. Hier verwenden wir die "get" Methode um alle eingehenden GET-Requests auf diesen Pfad abzufangen.
+Wir könnten hier auf andere HTTP-Anforderungsmethoden verwenden, wie zum Beispiel *post*, *put* oder *delete*.
+Als letztes müssen wir noch eine oder mehrere Handlerfunktionen, welche ausgeführt werden sollen angeben.
+```javascript
+app.get('/', (req, res) => {
+     res.send('Hello World!')
+     })
+```
 1. Nachdem Node.js installiert wurde, legt man sich einen Projektordner an
    
         mkdir new_Project
