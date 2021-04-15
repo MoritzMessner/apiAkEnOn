@@ -39,7 +39,7 @@ console.log(`Example app listening at http://localhost:${port}`)
          node app.js  
 
 Jetzt sollten wir unsere erste kleine Website haben.
-![Hello World](images/installation.jpg)
+![Hello World](../images/installation.jpg)
 
 
 

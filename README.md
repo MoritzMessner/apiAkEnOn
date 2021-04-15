@@ -5,10 +5,11 @@
 ---
 ## Leitfaden 
 
-1. [Installation](01_Installation.md)
-2. [Hello World!](02_helloWorld.md)
+1. [Installation](text/01_Installation.md)
+2. [Hello World!](text/02_helloWorld.md)
 3. ~~HTTP Fehlerbehandlung~~
-3. [Middleware](04_middleware.md)
+4. [Middleware](text/04_middleware.md)
+5. [Statische Dateien](text/05_staicFIles.md)
 
 ---
 ## Roadmap

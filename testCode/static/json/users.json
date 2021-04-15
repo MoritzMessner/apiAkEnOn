@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "firstName": "Max",
+      "lastName": "Mustermann",
+      "email": "max.mustermann@test.de"
+    },
+    {
+      "firstName": "Tom",
+      "lastName": "Timmson",
+      "email": "Tom.Timmson@test.de"
+    },
+    {
+      "firstName": "Tim",
+      "lastName": "Tommson",
+      "email": "Tim.Tommson@test.de"
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Güntersen",
+      "email": "Güntersen.Alex@test.de"
+    },
+    {
+      "firstName": "Johann",
+      "lastName": "Es",
+      "email": "Johann.Es@test.de"
+    }
+  ]
+}
