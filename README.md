@@ -1,23 +1,31 @@
 # ExpressJs
- Repository für das Modul Aktuelle Entwicklungen im Bereich Online Medien im 6. Semester
+
+Repository für das Modul Aktuelle Entwicklungen im Bereich Online Medien im 6. Semester
 
 
 ---
-## Leitfaden 
+
+## Leitfaden
 
 1. [Installation](text/01_Installation.md)
 2. [Hello World!](text/02_helloWorld.md)
 3. ~~HTTP Fehlerbehandlung~~
 4. [Middleware](text/04_middleware.md)
 5. [Statische Dateien](text/05_staicFIles.md)
+6. Projekt Ordnerstruktur
 
 ---
+
 ## Roadmap
+
 ### Forum
+
 - [ ] Login, Nutzer sollen sich registrieren/anmelden können
 - [ ] Übersicht über alle bestehenden Foreneinträge
 - [ ] Filterung von Beiträgen nach Kategorie
+
 ### Nutzer
+
 - [ ] Einen Account anlegen
 - [ ] Beiträge selbst in dem Forum anlegen
 - [ ] Beiträge anderer Nutzer kommentieren
@@ -29,24 +37,30 @@
 
 ## Themenfindung
 
-
-Entwicklung eines Online Forums mit dem Augenmerk auf das Node Framework „express.js“.
-In dem Online Forum soll es möglich sein, sich mit anderen Nutzern, textbasiert über bestimmte Themen auszutauschen. Nutzer sollen zum Beispiel selbst einen neuen „Thread“ anlegen können, welcher dann von anderen Nutzern kommentiert werden kann.
+Entwicklung eines Online Forums mit dem Augenmerk auf das Node Framework „express.js“. In dem Online Forum soll es
+möglich sein, sich mit anderen Nutzern, textbasiert über bestimmte Themen auszutauschen. Nutzer sollen zum Beispiel
+selbst einen neuen „Thread“ anlegen können, welcher dann von anderen Nutzern kommentiert werden kann.
 
 ### Was ist express.js?
 
-Express ist ein Framework für die Node Plattform, welches Node um einige Funktionalitäten erweitert. Diese Erweiterung soll das Entwickeln von Webanwendungen einfacher gestalten.
-Eine der Stärken von express.js ist es, einfach Middlewares zu nutzen, man kann zum Beispiel einer Anfrage mehrere Requesthandler zuweisen welche dann nacheinander abgearbeitet werden.
+Express ist ein Framework für die Node Plattform, welches Node um einige Funktionalitäten erweitert. Diese Erweiterung
+soll das Entwickeln von Webanwendungen einfacher gestalten. Eine der Stärken von express.js ist es, einfach Middlewares
+zu nutzen, man kann zum Beispiel einer Anfrage mehrere Requesthandler zuweisen welche dann nacheinander abgearbeitet
+werden.
 
 Hier ein Beispiel:
+
 ```javascript
 app.get('/adminArea', authentication(request, response, next), showAdminArea(request, response))
 ```
+
 Hier wird eine Authentifizierung eingeschoben.
 
 ### Was ist node.js?
 
-Node ist eine Runtime Environment und erlaubt es JavaScript Code außerhalb eines Webbrowsers auszuführen. Mithilfe von Node kann man das komplette Backend einer Website in JavaScript schreiben. Node wurde mit dem Fokus auf Performance entwickelt und hat außerdem noch den Vorteil, dass Frontend und backend beide auf JavaScript zurückgreifen.
+Node ist eine Runtime Environment und erlaubt es JavaScript Code außerhalb eines Webbrowsers auszuführen. Mithilfe von
+Node kann man das komplette Backend einer Website in JavaScript schreiben. Node wurde mit dem Fokus auf Performance
+entwickelt und hat außerdem noch den Vorteil, dass Frontend und backend beide auf JavaScript zurückgreifen.
 
 Weitere Technologien, welche benutzt werden sollen.
 
