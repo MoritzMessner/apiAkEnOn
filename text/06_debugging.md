@@ -7,7 +7,7 @@ Und zwar den *DEBUG* Parameter.
 set DEBUG=express:* & node application.js
 ```
 
-Als Basis für dieses Experiment nehmen wir wieder unser Hallo Welt Skript und Modifizieren es gegebenenfalls.
+Als Basis für dieses Experiment nehmen wir wieder unser Hallo Welt Skript und modifizieren es gegebenenfalls.
 
 ```javascript
 const express = require('express')
