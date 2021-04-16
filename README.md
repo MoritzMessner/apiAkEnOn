@@ -12,7 +12,8 @@ Repository für das Modul Aktuelle Entwicklungen im Bereich Online Medien im 6. 
 3. ~~HTTP Fehlerbehandlung~~
 4. [Middleware](text/04_middleware.md)
 5. [Statische Dateien](text/05_staicFIles.md)
-6. Projekt Ordnerstruktur
+6. [Debugging](text/06_debugging.md)
+7. Projekt Ordnerstruktur
 
 ---
 

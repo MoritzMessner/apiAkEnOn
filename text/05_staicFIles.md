@@ -5,7 +5,7 @@ dass wir in Express mithilfe von Routing Methoden eingehende Requests behandeln 
 erst definieren müssen. Wir haben aber auch statische Dateien und wollen nicht für jede dieser einen eigenen Handler
 anlegen müssen.
 
-Die Lösung hierfür bietet die Methode welche schon in Express integiert ist. Es ist eine Middleware Funktion welche wir
+Die Lösung hierfür bietet eine Methode welche schon in Express integiert ist. Es ist eine Middleware Funktion welche wir
 mithilfe von der *use* Methode in unsere Applikation integrieren.
 
 ```javascript
