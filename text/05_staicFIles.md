@@ -73,7 +73,22 @@ app.use(express.static('public', options))
 Hier können wir sehen wie wir mehrere Optionen auf einmal integrieren. Wir können zum Beispiel angeben welche Dateitypen
 zurückgesendet werden sollen, sollte es die angefragte Datei nicht geben, wird nach einem Dateityp gesucht welcher in
 extensions steht. Auch können wir einstellen ob "*unsichtbare*" Dateien ignoriert oder beachtet werden sollen. 
-
+---
+Mithilfe der Methode *.use* können wir ja Middleware in unsere Applikation einfügen. Die Methode sieht wie folgt aus:
+```javascript
+app.use([path,] callback [, callback...])
+```
+Wie wir hier sehen können, kann diese Methode auch einen Parameter *path* bekommen. Mit diesem Wissen können wir uns nun einen virtuellen Pfad für unsere statischen Dateien anlgenen.
+```javascript
+app.use("/fixedFiles",express.static('staticDirectory'))
+```
+Wenn wir diesen Befehl anwenden, finden wird unsere Dateien von *staticDirectory* so wieder:
+```
+http://localhost:3000/fixedFiles/js/main.js
+http://localhost:3000/fixedFiles/css/main.css
+http://localhost:3000/fixedFiles/images/logo.png
+http://localhost:3000/fixedFiles/html/faq.html
+```
 ## Quellen
 
 [Dokementation von static](https://expressjs.com/en/5x/api.html#express.static)

@@ -4,6 +4,7 @@ const path = require('path');
 const port = 3000
 
 app.use(express.static('static'));
+app.use('/luis', express.static('static'))
 
 
 app.get(['/home',"/"], (req, res) => {
