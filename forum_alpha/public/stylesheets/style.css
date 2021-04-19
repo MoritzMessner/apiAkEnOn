@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+    color: #383436;
+}
+
+#body-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+/* post related stuff */
+#meta span {
+    color: grey;
+}
