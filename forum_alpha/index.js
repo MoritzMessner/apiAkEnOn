@@ -4,6 +4,9 @@ const app = express()
 const path = require('path');
 const port = 3000
 
+
+const initDb = require("./db").initDb;
+
 // set twig as default view-engine
 // and configure the views folder as default view folder
 app.set('views', path.join(__dirname, 'views'));
@@ -18,6 +21,7 @@ app.use('/data', express.static('data'))
 // include controllers
 var indexRouter = require('./controllers/index');
 var post = require('./controllers/post');
+
 
 // set path for controllers
 app.use('/', indexRouter);
@@ -42,6 +46,11 @@ app.use(function (err, req, res, next) {
 
 
 // listens for incoming connections on specific port
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+initDb(function (err) {
+    app.listen(port, function (err) {
+        if (err) {
+            throw err; //
+        }
+        console.log(`Example app listening at http://localhost:${port}`)
+    });
+});

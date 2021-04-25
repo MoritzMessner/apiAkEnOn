@@ -1,13 +1,31 @@
-var MongoClient = require('mongodb').MongoClient
+const assert = require("assert");
+const client = require("mongodb").MongoClient;
+let _db;
 
-MongoClient.connect('mongodb://localhost:27017/animals', function (err, client) {
-    if (err) throw err
 
-    var db = client.db('animals')
+function initDb(callback) {
+    if (_db) {
+        console.warn("Trying to init DB again!");
+        return callback(null, _db);
+    }
+    client.connect('mongodb://localhost:27017/forum', connected);
 
-    db.collection('mammals').find().toArray(function (err, result) {
-        if (err) throw err
+    function connected(err, db) {
+        if (err) {
+            return callback(err);
+        }
+        db = db.db('forum')
+        _db = db;
+        return callback(null, _db);
+    }
+}
 
-        console.log(result)
-    })
-})
+function getDb() {
+    assert.ok(_db, "Db has not been initialized. Please called init first.");
+    return _db;
+}
+
+module.exports = {
+    getDb,
+    initDb
+};

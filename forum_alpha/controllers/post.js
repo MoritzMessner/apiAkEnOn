@@ -1,10 +1,19 @@
 var express = require('express');
 var router = express.Router();
-const samplePost = require('../data/samplePost.json');
-const sql = require('../db.js');
+var model = require('../models/postModel');
 
-router.get('/', function (req, res, next) {
-    res.render("post", samplePost)
+router.get('/', checkIfPostExists,function (req, res, next) {
+    res.render("post", res.locals.post)
 });
+
+
+async function checkIfPostExists(req, res, next) {
+    res.locals.postId = req.query.postId;
+    if (res.locals.postId === undefined)
+        console.log("error");
+    res.locals.post = await model.fetchPost(res.locals.postId);
+    next();
+}
+
 
 module.exports = router;

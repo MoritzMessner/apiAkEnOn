@@ -1,12 +1,12 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-    {% if data.image %}
-        <img src="{{ data.image }}" alt="">
+    {% if image %}
+        <img src="{{ image }}" alt="">
     {% endif %}
-    <h1>{{ data.title }}</h1>
-    <div id="meta"><span id="category">Kategorie:  {{ data.category }}</span> | <span
-                id="author">Post von: {{ data.name }}</span></div>
+    <h1>{{ title }}</h1>
+    <div id="meta"><span id="category">Kategorie:  {{ category }}</span> | <span
+                id="author">Post von: {{ name }}</span></div>
 
-    <p>{{ data.message }}</p>
+    <p>{{ message }}</p>
 {% endblock %}
