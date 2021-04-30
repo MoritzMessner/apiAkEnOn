@@ -14,5 +14,8 @@
     "mongodb": "^3.6.6",
     "mysql": "^2.18.1",
     "twig": "~0.10.3"
+  },
+  "devDependencies": {
+    "express-session": "^1.17.1"
   }
 }

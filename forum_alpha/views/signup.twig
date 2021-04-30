@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}
+
+
+{% block body %}
+    <h1>SignUp Page</h1>
+    <form action="/signup" method="post">
+        <input type="text" name="id" required placeholder="UserId">
+        <input type="password" name="password" required placeholder="Password">
+        <button type="submit">Anmelden</button>
+    </form>
+{% endblock %}
