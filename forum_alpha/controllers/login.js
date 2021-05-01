@@ -26,6 +26,8 @@ router.post('/', function (req, res) {
 });
 
 
+// todo get User form db
+
 async function getUser(req, res, next) {
     res.locals.postId = req.query.postId;
 

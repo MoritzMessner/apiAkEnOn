@@ -1,0 +1,10 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <h1>Homepage</h1>
+    <p>All Posts</p>
+    {% for element in data %}
+        <a href="/post?postId={{ element.id }}"> {{ element.title }}</a>
+        <hr>
+    {% endfor %}
+{% endblock %}
