@@ -5,8 +5,8 @@
         <img src="{{ image }}" alt="">
     {% endif %}
     <h1>{{ title }}</h1>
-    <div id="meta"><span id="category">Kategorie:  {{ category }}</span> | <span
-                id="author">Post von: {{ name }}</span></div>
-
+    <div id="meta">
+        <span id="category">Kategorie:  {{ category }}</span> | <span id="author">Post von: {{ name }}</span>
+    </div>
     <p>{{ message }}</p>
 {% endblock %}

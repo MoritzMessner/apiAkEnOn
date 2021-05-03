@@ -5,7 +5,7 @@ var model = require('../models/postModel');
 
 router.all('/', async function (req, res, next) {
     res.locals.posts = await model.fetchPosts();
-    await res.render("home", {"data": res.locals.posts});
+    res.render("home", {"data": res.locals.posts});
 });
 
 module.exports = router;

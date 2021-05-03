@@ -1,11 +1,11 @@
 const createError = require('http-errors');
 const express = require('express')
-const app = express()
-const path = require('path');
-const port = 3000
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const initDb = require("./db").initDb;
+const path = require('path');
+const app = express()
+const port = 3000
 
 // set twig as default view-engine
 // and configure the views folder as default view folder
@@ -14,7 +14,7 @@ app.set('view engine', 'twig');
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({secret: "Your secret key"}));
 
 // set handler for static files
@@ -44,21 +44,20 @@ app.get('/protected_page', checkSignIn, function (req, res) {
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    next(createError(404));
+    next(createError(404, "-- Not Found"));
 });
 
 // error handler
 app.use(function (err, req, res, next) {
-    // set locals, only providing error in development
     res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.locals.error = err;
 
     // render the error page
-    res.status(err.status || 500);
+    res.status(err.status);
     res.render('error');
 });
 
-function checkSignIn(req, res,next) {
+function checkSignIn(req, res, next) {
     if (req.session.user) {
         next();     //If session exists, proceed to page
     } else {
@@ -67,7 +66,6 @@ function checkSignIn(req, res,next) {
         next(err);  //Error, trying to access unauthorized page!
     }
 }
-
 
 
 // listens for incoming connections on specific port
