@@ -2,8 +2,8 @@ const createError = require('http-errors');
 const express = require('express')
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const initDb = require("./db").initDb;
 const path = require('path');
+const initDb = require("./db").initDb;
 const app = express()
 const port = 3000
 
@@ -15,12 +15,12 @@ app.set('view engine', 'twig');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(session({secret: "Your secret key"}));
+//app.use(session({secret: "Your secret key"}));
 
 // set handler for static files
 // static contains, static html, img and files
 // data contains user content, like profile pictures and img from posts
-app.use('/', express.static('public'))
+app.use(express.static('public'))
 app.use('/data', express.static('data'))
 
 // include controllers
