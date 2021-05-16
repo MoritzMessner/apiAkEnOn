@@ -2,9 +2,17 @@ var express = require('express');
 var router = express.Router();
 var model = require('../models/postModel');
 
-router.get('/', checkIfPostExists,function (req, res, next) {
+router.get('/', checkIfPostExists, function (req, res, next) {
     res.render("post", res.locals.post)
 });
+
+
+router.post("/addComment", (req, res,next) => {
+    let postId = req.query.postId;
+    let commentVal = req.query.comment;
+    model.addComment(postId, commentVal);
+    res.send("ok")
+})
 
 
 async function checkIfPostExists(req, res, next) {
