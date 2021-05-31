@@ -1,14 +1,14 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-    {% if image %}
-        <img src="{{ image }}" alt="">
+    {% if post.image %}
+        <img src="{{ post.image }}" alt="">
     {% endif %}
     <h1>{{ title }}</h1>
     <div id="meta">
-        <span id="category">Kategorie:  {{ category }}</span> | <span id="author">Post von: {{ name }}</span>
+        <span id="category">Kategorie:  {{ post.category }}</span> | <span id="author">Post von: {{ post.name }}</span>
     </div>
-    <p>{{ message }}</p>
+    <p>{{ post.message }}</p>
 
     <hr>
     <label for="comment">Comments:</label>
@@ -17,7 +17,12 @@
     <br><br>
     <input type="submit" onclick="writeComment()">
     <div id="comment-area">
-
+        {% for comment in comments %}
+            <hr>
+            <div class="comment">
+                <p> {{ comment.comment }} </p>
+            </div>
+        {% endfor %}
 
     </div>
 
@@ -25,30 +30,23 @@
     <script>
 
         function writeComment() {
-            let postId = "{{ id }}"
+            let postId = "{{ post.id }}"
             let comment = document.querySelector("#comment");
             let commentVal = comment.value;
             comment.value = "type here";
 
 
-            let html = '<hr>' +
-                '<div class="comment">' +
-                '<p>' + commentVal + '</p>' +
-                '</div>';
-
-            document.getElementById('comment-area').innerHTML += html;
-
             var url = "/post/addComment";
-            var params = "postId=" + postId + "&comment=" + commentVal;
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", url, true);
 
-//Send the proper header information along with the request
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            $.post(url, {comment: commentVal, postId: postId}, function () {
+                let html = '<hr>' +
+                    '<div class="comment">' +
+                    '<p>' + commentVal + '</p>' +
+                    '</div>';
 
-            xhr.send(params);
+                document.getElementById('comment-area').innerHTML += html;
+            });
 
-            console.log(commentVal);
         }
 
 

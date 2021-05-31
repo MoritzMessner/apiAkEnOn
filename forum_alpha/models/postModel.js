@@ -9,6 +9,9 @@ module.exports = {
     fetchPosts: async function () {
         return await getDb().collection('posts').find().toArray();
     },
+    fetchComments: async function (_postId) {
+        return await getDb().collection('comments').find({postId: _postId}).toArray();
+    },
     addComment: function (postId, comment) {
         getDb().collection('comments').insertOne({
             "postId": postId,
