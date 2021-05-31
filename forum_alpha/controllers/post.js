@@ -10,8 +10,10 @@ router.get('/', checkIfPostExists, function (req, res, next) {
 router.post("/addComment", (req, res,next) => {
     let postId = req.query.postId;
     let commentVal = req.query.comment;
-    model.addComment(postId, commentVal);
-    res.send("ok")
+    console.log(commentVal());
+    next();
+    //model.addComment(postId, commentVal);
+    //res.send("ok")
 })
 
 
