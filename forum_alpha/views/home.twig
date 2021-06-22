@@ -4,7 +4,16 @@
     <h1>Homepage</h1>
     <p>All Posts</p>
     {% for element in data %}
-        <a href="/post?postId={{ element.id }}"> {{ element.title }}</a>
+        <div class="row" data-category="{{ element.category }}">
+            <div class="flex-item">
+                <a href="/post?postId={{ element.id }}"> {{ element.title }}</a>
+            </div>
+            <div class="flex-item">
+                <span>User:</span> {{ element.name }}
+                |
+                <span>Kategorie:</span> {{ element.category }}
+            </div>
+        </div>
         <hr>
     {% endfor %}
 {% endblock %}

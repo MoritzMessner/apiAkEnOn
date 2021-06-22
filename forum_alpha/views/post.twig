@@ -19,8 +19,13 @@
     <div id="comment-area">
         {% for comment in comments %}
             <hr>
-            <div class="comment">
-                <p> {{ comment.comment }} </p>
+            <div class="row comments">
+                <div class="flex-item">
+                    <p> {{ comment.comment|trim }} </p>
+                </div>
+                <div class="flex-item comment">
+                    <span> {{ comment.timestamp }} </span>
+                </div>
             </div>
         {% endfor %}
 
@@ -33,15 +38,16 @@
             let postId = "{{ post.id }}"
             let comment = document.querySelector("#comment");
             let commentVal = comment.value;
+            let dateVal = Date.now();
             comment.value = "type here";
 
 
             var url = "/post/addComment";
 
-            $.post(url, {comment: commentVal, postId: postId}, function () {
+            $.post(url, {comment: commentVal, postId: postId, date: dateVal}, function () {
                 let html = '<hr>' +
-                    '<div class="comment">' +
-                    '<p>' + commentVal + '</p>' +
+                    '<div class="row comments"><div class="flex-item"><p>' + commentVal + '</p></div>  <div class="flex-item comment"><span>' + new Date(dateVal).getHours() +
+                    ":" + new Date(dateVal).getMinutes() + " " + new Date(dateVal).getDate() + '.' + new Date(dateVal).getMonth() + 1 + '.' + new Date(dateVal).getFullYear() + '</span>' +
                     '</div>';
 
                 document.getElementById('comment-area').innerHTML += html;

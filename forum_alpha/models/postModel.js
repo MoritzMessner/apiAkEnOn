@@ -10,17 +10,22 @@ module.exports = {
         return await getDb().collection('posts').find().toArray();
     },
     fetchComments: async function (_postId) {
-        return await getDb().collection('comments').find({postId: _postId}).toArray();
+        let entitys =  await getDb().collection('comments').find({postId: _postId}).toArray();
+        entitys.map((obj) => {
+            let date = new Date(parseInt(obj.timestamp));
+            obj.timestamp =  date.getHours() +
+                ":" + date.getMinutes() + " " + date.getDate() + '.' + (date.getMonth() ) + '.' + date.getFullYear()
+        })
+        return entitys;
     },
-    addComment: function (postId, comment) {
+    addComment: function (postId, comment, date) {
         getDb().collection('comments').insertOne({
             "postId": postId,
-            "comment": comment.trim()
+            "comment": comment.trim(),
+            "timestamp": date
         });
     },
     editPost: function (id) {
-    },
-    updatePost: function (id) {
     },
     deletePost: function (id) {
     }

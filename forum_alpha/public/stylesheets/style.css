@@ -18,3 +18,24 @@
 #body-wrapper > img {
     width: 100%;
 }
+
+.row{
+    display: flex;
+    width: 100%;
+    height: 20px;
+}
+.row .flex-item{
+    width: 50%;
+}
+.flex-item span{
+    color: #5c5a5c;
+}
+.row .flex-item:last-child{
+    align-self: flex-end;
+}
+.comment{
+    text-align: right;
+}
+.comments{
+    height: auto;
+}
